@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>chinmay-app</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <listener>
+  	<listener-class>com.servlet.listener.ConnectionListener</listener-class>
+  </listener>
+  
+   <context-param>
+  		<param-name>username</param-name>
+  		<param-value>root</param-value>
+  </context-param>  
+  
+  <context-param>
+  		<param-name>password</param-name>
+  		<param-value>root</param-value>
+  </context-param>
+  
+  <context-param>
+  		<param-name>databaseName</param-name>
+  		<param-value>fruits_db</param-value>
+  </context-param>
+  
+  
+  
+    <servlet>
+  	<servlet-name>findImageBySno</servlet-name>
+  	<servlet-class>com.servlet.ShowImageServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>findImageBySno</servlet-name>
+  	<url-pattern>/findImageBySno</url-pattern>	
+  </servlet-mapping>
+   
+  
+     <servlet>
+  	<servlet-name>fruits</servlet-name>
+  	<servlet-class>com.servlet.FruitsServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>fruits</servlet-name>
+  	<url-pattern>/fruits</url-pattern>	
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>loginServlet</servlet-name>
+  	<servlet-class>com.servlet.LoginServlet</servlet-class>
+  	 <init-param>
+  	 		<param-name>email</param-name>
+  	 		<param-value>login@gmail.com</param-value>
+  	 </init-param> 
+  	  <init-param>
+  	 		<param-name>color</param-name>
+  	 		<param-value>red</param-value>
+  	 </init-param> 
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>loginServlet</servlet-name>
+  	<url-pattern>/loginServlet</url-pattern>	
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>helloChinmay</servlet-name>
+  	<servlet-class>com.servlet.HelloChinmay</servlet-class>
+  	 <init-param>
+  	 		<param-name>email</param-name>
+  	 		<param-value>emack@gmail.com</param-value>
+  	 </init-param> 
+  	  <init-param>
+  	 		<param-name>color</param-name>
+  	 		<param-value>yellow</param-value>
+  	 </init-param> 
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>helloChinmay</servlet-name>
+  	<url-pattern>/helloChinmay</url-pattern>	
+  </servlet-mapping>
+  
+</web-app>
